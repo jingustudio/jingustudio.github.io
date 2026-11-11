@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>궁왕 키우기 개인정보처리방침 | JinguStudio</title><style>body{margin:0;background:#fff;color:#20242b;font-family:system-ui,sans-serif;line-height:1.8}main{max-width:820px;margin:auto;padding:32px 24px 64px}h1{font-size:1.8rem}h2{margin-top:32px;font-size:1.25rem}.notice{padding:16px;background:#f2f5f8;border-radius:8px}a{color:#164fa2}li{margin:8px 0}</style></head><body><main>
+<h1>궁왕 키우기 개인정보처리방침</h1>
+<p>작성·최근 수정일: 2026년 11월 12일<br>개발자: JinguStudio(진구스튜디오)<br>앱: 궁왕 키우기 · com.JinguStudio.ArcherKing<br>문의: <a href="mailto:JinguStudio@gmail.com">JinguStudio@gmail.com</a></p>
+<h2>1. 적용 범위와 기능 상태</h2>
+<p class="notice">확인된 기존 Android 1.0(버전 코드 2)는 로그인과 클라우드 저장을 사용하지 않는 로컬 저장 버전입니다. Google Play Games의 Android 로그인 및 Saved Games 설정과 SDK·연동 코드가 준비되었으며, 정식 Android 패키지에서 사용하도록 구현되었습니다. 다만 새 버전의 출시와 실제 기기에서의 동작 검증은 아직 완료되지 않았습니다. 서비스 설정이나 코드 준비만으로 이용자에게 해당 기능이 배포되었다는 뜻은 아닙니다. 아래의 Google 연동 설명은 해당 기능이 포함되어 실제 사용 가능한 버전에서 연동 기능을 이용할 때에 적용됩니다.</p>
+<h2>2. 기존 로컬 저장 버전에서 처리하는 정보</h2>
+<p>기존 버전은 별도 회원가입 없이 이용하며 게임 진행 상황, 재화, 레벨, 장비, 스킬, 스테이지, 보상 기록과 설정 등을 기기 내 앱 저장 공간에 저장합니다. 이 버전의 게임 코드에는 해당 정보를 개발자 서버로 보내는 기능이 연결되어 있지 않습니다. 광고, 광고 ID 수집, 이용 분석 및 원격 오류 보고 서비스도 활성화되어 있지 않습니다. 실제 결제를 처리하는 인앱 결제 기능은 연결되어 있지 않습니다.</p>
+<p>로컬 저장 파일은 JSON 및 무결성 확인값을 사용합니다. 무결성 확인은 파일 암호화가 아니며, 로컬 저장 파일이 암호화되어 있다고 안내하지 않습니다.</p>
+<h2>3. Google Play Games 연동 기능</h2>
+<p>연동 기능의 제공자는 Google이며 Google Play Games 및 Saved Games를 이용합니다. 목적은 로그인한 게임 프로필 구분과 게임 진행 저장·복원입니다. 기능이 활성화된 버전에서 처리하도록 구현한 항목은 다음과 같습니다.</p>
+<ul><li>계정별 저장 구분을 위한 Play Games 플레이어 ID</li><li>화면 표시용 게임 프로필명: Google SDK에서 읽어 표시하며 게임 저장 JSON에 포함하거나 별도 로컬 파일로 저장하지 않습니다.</li><li>저장 시각, 복원 식별값, 게임 진행 데이터(재화·레벨·장비·스킬·스테이지·보상 기록 등)</li></ul>
+<p>게임 진행 저장 기능을 이용하면 Play Games 플레이어 ID, UTC 저장 시각, 무작위 클라우드 기록 ID와 게임 진행 JSON이 Google Saved Games로 전송됩니다. 저장할 때마다 새 식별값의 저장본을 만들도록 구현되어 있으며, 기존 원격 저장본을 자동으로 덮어쓰거나 삭제하지 않습니다. 따라서 저장본이 누적될 수 있습니다. 불러오기는 Google의 저장본 목록에서 이용자가 선택한 저장본의 계정과 날짜를 확인하고 확인 후 다음 전체 앱 재시작 때 로컬 진행을 복원하는 방식입니다. 복원 전 로컬 원본은 보관합니다. 게임 코드에서 Google 계정 비밀번호나 OAuth 토큰을 직접 입력받아 보관하도록 구현하지 않습니다. 이메일을 게임 저장 정보로 요청하거나 보관하도록 구현하지 않습니다. Google 서비스 자체의 인증 및 데이터 처리는 Google의 정책과 계정 설정에 따릅니다.</p>
+<p>복원 과정에서는 계정 바인딩 정보, 복원 해시, 복원 대기 JSON, 이전 기본 저장 파일과 백업 및 이전 계정 ID 복구본이 기기 내에 남을 수 있습니다. 연동 기능의 실제 배포 및 이용 가능 여부는 앱 화면과 버전에 따라 다릅니다. 로그인 또는 저장 요청만으로 클라우드 동기화가 항상 완료되었다고 보장하지 않습니다.</p>
+<h2 id="data-deletion">4. 보관 및 삭제</h2>
+<p>로컬 게임 데이터는 기기에 보관됩니다. Android 설정에서 궁왕 키우기의 저장 공간으로 이동하여 앱 데이터를 삭제할 수 있습니다. 메뉴명은 기기마다 다를 수 있으며, 삭제하면 진행 상황을 잃을 수 있습니다. 앱 데이터 삭제가 Google 클라우드 데이터나 기기·운영체제의 모든 백업까지 삭제한다는 뜻은 아닙니다.</p>
+<p>Google Play Games 기능을 사용한 경우 Google의 <a href="https://support.google.com/googleplay/answer/9130646?hl=ko">게임 데이터 삭제 안내</a>에서 개별 게임 데이터 삭제 방법을 확인할 수 있습니다. 웹에서 Google Play Games 프로필 → 내 데이터 → Play 게임즈 계정 및 데이터 삭제 → 개별 게임 데이터 삭제로 이동하여 궁왕 키우기를 선택하는 방법이 안내되어 있습니다. Google의 메뉴와 제공 여부는 계정·환경에 따라 달라질 수 있습니다. Google 데이터 삭제와 기기의 로컬 데이터 삭제는 별개입니다. Play 게임즈 데이터 삭제는 Google 계정의 별도 Play 기록을 삭제하는 절차가 아니며, 개발자에게 이메일 등으로 별도로 제공한 정보도 자동으로 삭제하지 않습니다. Google 서비스의 보관 및 삭제 처리는 해당 서비스 정책에 따르며, 모든 사본의 즉시 삭제나 특정 보관기간을 보장하지 않습니다.</p>
+<p>현재 구현에는 게임 내부의 별도 계정 탈퇴·클라우드 저장본 삭제 화면이 없습니다. 삭제 경로 또는 개인정보 처리에 관한 문의는 위 이메일로 보내실 수 있습니다. 삭제 문의 시 비밀번호나 인증 코드, 결제카드 정보는 보내지 마세요.</p>
+<h2>5. 외부 서비스 및 문의</h2>
+<p>Google Play의 앱 설치·서비스 이용, Google Play Games와 기기·운영체제 기능의 정보 처리는 각 제공자의 정책에도 따릅니다. <a href="https://policies.google.com/privacy?hl=ko">Google 개인정보처리방침</a>과 <a href="https://support.google.com/googleplay/answer/3129346?hl=ko">Play Games 프로필 개인정보 설정 안내</a>를 참고하세요.</p>
+<p>이용자가 이메일로 문의하면 보내는 이메일 주소, 문의 내용 및 첨부파일이 지원 연락처로 전달됩니다. 게임에서 이 정보를 자동으로 보내는 것은 아닙니다. 문의에 불필요한 개인정보와 비밀정보는 포함하지 마세요.</p>
+<h2>6. 변경 안내</h2>
+<p>게임의 기능 및 정보 처리 방식이 달라지면 이 페이지의 내용과 최근 수정일을 갱신합니다. 새 연동 기능에 대한 설명은 기존 로컬 전용 버전에 서버 수집 기능이 있다는 뜻이 아닙니다.</p>
+</main></body></html>
